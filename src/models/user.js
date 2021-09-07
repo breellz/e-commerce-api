@@ -21,12 +21,12 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        minLength: 7,
         required: true,
+        minLength: 7,
         lowercase: true,
         trim: true,
         validate(value) {
-            if( value.toLowerCase().includes(password)) {
+            if( value.toLowerCase().includes('password')) {
                 throw new Error('password musn\'t contain password')
             }
         }
@@ -35,6 +35,6 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 })
 
-const User = mongoose.model('User', user)
+const User = mongoose.model('User', userSchema)
 
 module.exports = User
