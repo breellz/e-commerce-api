@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const itemSchema = new mongoose.Schema({
     name: {
-        type: Stirng,
+        type: String,
         required: true,
         trim: true
     },
@@ -24,4 +24,4 @@ const itemSchema = new mongoose.Schema({
 
 const Item = mongoose.model('Item', itemSchema)
 
-modules.export = Item
+module.exports = Item
