@@ -28,7 +28,7 @@ router.get('/items/:id', async(req, res) => {
 })
 
 //create an item
-router.post('/items', async(req, res) => {
+router.post('/items',Auth, async(req, res) => {
     try {
         const newItem = new Item(req.body)
         await newItem.save()
@@ -40,7 +40,7 @@ router.post('/items', async(req, res) => {
 
 //update an item
 
-router.patch('/items/:id', async(req, res) => {
+router.patch('/items/:id', Auth, async(req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'description', 'category', 'price']
 
@@ -66,7 +66,7 @@ router.patch('/items/:id', async(req, res) => {
 })
 
 //delete item
-router.delete('/items/:id', async(req, res) => {
+router.delete('/items/:id', Auth, async(req, res) => {
     try {
         const deletedItem = await Item.findOneAndDelete( {_id: req.params.id} )
         if(!deletedItem) {
