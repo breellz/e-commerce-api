@@ -18,6 +18,9 @@ router.get('/items', async(req, res) => {
 router.get('/items/:id', async(req, res) => {
     try{
         const item = await Item.findOne({_id: req.params.id})
+        if(!item) {
+            res.status(404).send({error: "Item not found"})
+        }
         res.status(200).send(item) 
     } catch (error) {
         res.status(400).send(error)
@@ -57,6 +60,19 @@ router.patch('/items/:id', async(req, res) => {
         updates.forEach((update) => item[update] = req.body[update])
         await item.save()
         res.send(item)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
+//delete item
+router.delete('/items/:id', async(req, res) => {
+    try {
+        const deletedItem = await Item.findOneAndDelete( {_id: req.params.id} )
+        if(!deletedItem) {
+            res.status(404).send({error: "Item not found"})
+        }
+        res.send(deletedItem)
     } catch (error) {
         res.status(400).send(error)
     }
