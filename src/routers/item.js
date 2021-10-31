@@ -4,6 +4,26 @@ const Auth = require('../middleware/auth')
 
 const router = new express.Router()
 
+//fetch all items
+router.get('/items', async(req, res) => {
+    try {
+        const items = await Item.find({})
+        res.status(200).send(items)
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
+//fetch an item
+router.get('/items/:id', async(req, res) => {
+    try{
+        const item = await Item.findOne({_id: req.params.id})
+        res.status(200).send(item) 
+    } catch (error) {
+        res.status(400).send(error)
+    }
+})
+
 //create an item
 router.post('/items', async(req, res) => {
     try {
