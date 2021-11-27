@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const ObjectID = mongoose.Schema.Types.ObjectId
 
-const orderSchema = new mpngoose.Schema({
+const orderSchema = new mongoose.Schema({
     owner : {
         type: ObjectID,
         required: true,
@@ -33,4 +33,4 @@ const orderSchema = new mpngoose.Schema({
 
 const Order = mongoose.model('Order', orderSchema)
 
-modeule.exports = Order
+module.exports = Order
