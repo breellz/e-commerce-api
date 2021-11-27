@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 const ObjectID = mongoose.Schema.Types.ObjectId
 
-const cartSchema = new mpngoose.Schema({
+const cartSchema = new mongoose.Schema({
     owner : {
         type: ObjectID,
         required: true,
         ref: 'User'
     },
     items: [{
-        productId: {
+        itemId: {
             type: ObjectID,
             ref: 'Item',
             required: true
@@ -33,4 +33,4 @@ const cartSchema = new mpngoose.Schema({
 
 const Cart = mongoose.model('Cart', cartSchema)
 
-modeule.exports = Cart
+module.exports = Cart

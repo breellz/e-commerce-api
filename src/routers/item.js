@@ -30,10 +30,14 @@ router.get('/items/:id', async(req, res) => {
 //create an item
 router.post('/items',Auth, async(req, res) => {
     try {
-        const newItem = new Item(req.body)
+        const newItem = new Item({
+            ...req.body,
+            owner: req.user._id
+        })
         await newItem.save()
         res.status(201).send(newItem)
     } catch (error) {
+        console.log({error})
         res.status(400).send({message: "error"})
     }
 })
