@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js"
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "author": "Bassit Owolabi",
   "license": "ISC",
