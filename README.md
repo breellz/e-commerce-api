@@ -76,6 +76,9 @@ This is an ecommerce API  built with NodeJs. It features authentication, full CR
 ```npm test```
 
 <!-- INTERACTING WITH THE API -->
+App can be tested without cloning as it is deployed on the web\
+PRODUCTION EDNPOINT: "https://breellz-e-commerce-api.herokuapp.com"
+
 TO CREATE USERS
 Method: POST\
 ENDPOINT: "localhost:3000/users"\
