@@ -5,17 +5,28 @@ const Auth = require('../middleware/auth')
 const router = new express.Router()
 
 //fetch all items
-router.get('/items', async(req, res) => {
+router.get('/items', Auth, async(req, res) => {
+  
+    if(req.query.user == 1) {
+        try {
+           const items = await Item.find({ owner: req.user._id})
+            res.status(200).send(items)
+        } catch (error) {
+            console.log(error)
+            res.status(500).send('something went wrong')
+        }
+    } else {
     try {
         const items = await Item.find({})
         res.status(200).send(items)
     } catch (error) {
         res.status(400).send(error)
     }
+}
 })
 
 //fetch an item
-router.get('/items/:id', async(req, res) => {
+router.get('/items/:id', Auth, async(req, res) => {
     try{
         const item = await Item.findOne({_id: req.params.id})
         if(!item) {

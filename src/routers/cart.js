@@ -18,7 +18,6 @@ router.get("/cart", Auth, async (req, res) => {
       res.send(null);
     }
   } catch (error) {
-    console.log(error);
     res.status(500).send();
   }
 });
