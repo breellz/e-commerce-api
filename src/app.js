@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path');
 const userRouter = require('./routers/user')
 const itemRouter =require('./routers/item')
 const cartRouter = require('./routers/cart')
@@ -15,7 +16,12 @@ app.use(itemRouter)
 app.use(cartRouter)
 app.use(orderRouter)
 
+const publicDirectory = path.join(__dirname, '../public')
+app.use(express.static(publicDirectory))
 
+app.get('/', (req, res) => {
+    res.sendFile('index.html')
+})
 app.listen(port, () => {
     console.log('server listening on port ' + port)
 })
