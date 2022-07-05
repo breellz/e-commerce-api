@@ -34,6 +34,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 This is an ecommerce API  built with NodeJs. It features authentication, full CRUD ability on products, order, cart and user.
+Documentation here:
+https://documenter.getpostman.com/view/11784799/UVJhDEyt
 
 ### Built With
 * [NodeJs](http://nodejs.org)
@@ -74,96 +76,6 @@ This is an ecommerce API  built with NodeJs. It features authentication, full CR
 
 5. Test components
 ```npm test```
-
-<!-- INTERACTING WITH THE API -->
-App can be tested without cloning as it is deployed on the web\
-PRODUCTION EDNPOINT: "https://breellz-e-commerce-api.herokuapp.com"
-
-TO CREATE USERS
-Method: POST\
-ENDPOINT: "localhost:3000/users"\
-DATA-TYPE: JSON\
-body: {
-    "name": "Bassit Owolabi",
-    "email":"barseetbrn@gmail.com",
-    "password": "123456"
-}
-
-TO LOGIN USERS\
-Method: POST\
-ENDPOINT: "localhost:3000/users/login"\
-DATA-TYPE: JSON\
-body: {
-    "email":"barseetbrn@gmail.com",
-    "password": "123456"
-}
-
-TO LOGOUT USERS\
-Method: POST\
-ENDPOINT: "localhost:3000/users/logout"\
-DATA-TYPE: JSON\
-
-TO LOGOUT ALL SESSIONS\
-Method: POST\
-ENDPOINT: "localhost:3000/users/logoutAll"\
-DATA-TYPE: JSON
-
-TO ADD ITEM TO STORE\
-Method: POST\
-ENDPOINT: "localhost:3000/items"\
-DATA-TYPE: JSON\
-body:{
-    "name": "Pair of socks ",
-    "description": "fancy ass socks",
-    "category": "fashion",
-    "price": 9000
-}
-
-TO GET ALL ITEMS IN STORE\
-Method: GET\
-ENDPOINT: "localhost:3000/items"\
-DATA-TYPE: JSON\
-
-TO GET AN ITEM IN STORE\
-Method: GET\
-ENDPOINT: "localhost:3000/items/id"\
-DATA-TYPE: JSON\
-
-
-TO UPDATE ITEM IN STORE\
-Method: PATCH\
-ENDPOINT: "localhost:3000/items/id"\
-DATA-TYPE: JSON\
-body: {
-    any of the accepted object keys
-}
-
-
-
-TO DELETE AN ITEM IN STORE\
-Method: DELETE\
-ENDPOINT: "localhost:3000/items/id"\
-DATA-TYPE: JSON
-
-TO ADD AN ITEM TO CART\
-Method: POST\
-ENDPOINT: "localhost:3000/cart"\
-DATA-TYPE: JSON\
-BODY : {
-    "itemId": "61a1fce7a1685e765135c191",
-    "quantity": 1
-}
-
-TO GET THE  CART OF THE CURRENT USER\
-Method: GET\
-ENDPOINT: "localhost:3000/cart"
-
-TO DELETE ITEM IN CART\
-METHOD: DELETE\
-ENDPOINT: localhost:3000/cart?itemId=61a1fce7a1685e765135c191
-Id of the item to be deleted is passed as a query string
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
