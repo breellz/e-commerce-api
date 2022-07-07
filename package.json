@@ -13,6 +13,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "flutterwave-node-v3": "^1.0.9",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.5",
     "stripe": "^8.193.0",
