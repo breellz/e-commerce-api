@@ -82,6 +82,7 @@ router.post('/order/checkout', Auth, async(req, res) => {
     } catch (error) {
         console.log(error)
         res.status(400).send('invalid request')
+        
     }
 })
 
