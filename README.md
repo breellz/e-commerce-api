@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-
 
 <p align="center">
   <h3 align="center">E commerce web api</h3>
 
   <p align="center">
-    Tell a story
     <br />
     <a href="https://github.com/breellz/e-commerce-api"><strong>Explore the docs »</strong></a>
     <br />
@@ -36,6 +33,13 @@
 This is an ecommerce API  built with NodeJs. It features authentication, full CRUD ability on products, order, cart and user.
 Documentation here:
 https://documenter.getpostman.com/view/11784799/UVJhDEyt
+
+## Environmental variables
+JWT_SECRET<br />
+PORT=3000<br />
+MONGODB_URL<br />
+FLUTTERWAVE_V3_SECRET_KEY<br />
+FLUTTERWAVE_v3_PUBLIC_KEY<br />
 
 ### Built With
 * [NodeJs](http://nodejs.org)
