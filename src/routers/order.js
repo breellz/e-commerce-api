@@ -8,7 +8,6 @@ const Auth = require("../middleware/auth")
 
 const router = new express.Router()
 
-const flw = new Flutterwave(process.env.FLUTTERWAVE_V3_PUBLIC_KEY, process.env.FLUTTERWAVE_V3_SECRET_KEY)
 
 //get orders
 
