@@ -9,7 +9,11 @@ const Auth = require("../middleware/auth")
 const router = new express.Router()
 
 
-const flw = new Flutterwave(process.env.FLUTTERWAVE_V3_PUBLIC_KEY, process.env.FLUTTERWAVE_V3_SECRET_KEY)
+//const flw = new Flutterwave(process.env.FLUTTERWAVE_V3_PUBLIC_KEY, process.env.FLUTTERWAVE_V3_SECRET_KEY)
+/* 
+commenting that out till I find a fix for flutterwave public key required error
+*/
+
 //get orders
 
 router.get('/orders', Auth, async (req, res) => {
